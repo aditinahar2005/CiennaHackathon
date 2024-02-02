@@ -6,7 +6,7 @@ class IPAdress:
     adress = ''
     validLease = True # True means u can connect, false means its in use.
     startTimer =  0.0
-    # userID = 
+    # userID =
 
     def __init__(self, adress, validLease):
         self.adress = adress
@@ -17,6 +17,8 @@ class IPAdress:
         self.validLease = True
         print("IP address released sucessfully.")
 
+    def renew(self):
+        self.startTimer = time.time()
     def isValidLease(self):
         if (time.time() - self.startTimer > 60):
             return False
