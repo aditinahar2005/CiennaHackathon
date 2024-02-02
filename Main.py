@@ -38,9 +38,8 @@ def findRel(IP):
     for i in range(0, len(IPaddressarray)):
         if (IPaddressarray[i].adress == IP):
             return i
-        else:
-            print("Not found in the List")
-            return -1
+    print("Not found in the List")
+    return -1
 
 def renewer(IP):
     addressOfIP = findRel(IP)
@@ -66,6 +65,12 @@ while running:
     elif choice.split(" ")[0].lower() == 'renew':
         renewer(choice.split(" ")[1])
         print("Renewed:")
+    elif choice.split(" ")[0].lower() == 'status':
+        index = findRel(choice.split(' ')[1])
+        if(index == -1 ):
+            IPaddressarray[index].status(False)
+        else:
+            IPaddressarray[index].status(True)
     elif choice.lower() == 'quit':
         sys.exit(0)
 

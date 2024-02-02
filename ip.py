@@ -24,4 +24,9 @@ class IPAdress:
             return False
         else:
             return True
+    def status(self, stat):
+        if(stat):
+            print("Unavaialble")
+        else:
+            print("Avaialble")
     # def leaseTimer(self):
